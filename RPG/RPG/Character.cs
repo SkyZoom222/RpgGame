@@ -38,7 +38,6 @@ namespace RPG
         {
             int X = Position.X;
             int Y = Position.Y;
-            if (Activity == Action.Stay) return;
             if (Activity.HasFlag(Action.W)) Y -= 10;
             if (Activity.HasFlag(Action.A)) X -= 10;
             if (Activity.HasFlag(Action.S)) Y += 10;
