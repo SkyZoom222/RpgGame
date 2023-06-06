@@ -24,8 +24,6 @@ namespace RPG
             WaterWand = 512,
         }
 
-        public static bool quit = false;
-
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);

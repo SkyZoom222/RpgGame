@@ -9,11 +9,13 @@ namespace RPG
     {
         protected SpriteAnimation Texture;
         protected Rectangle Position;
+        protected Random rnd;
 
         public Object(SpriteAnimation texture, Rectangle position)
         {
             Texture = texture;
             Position = position;
+            rnd = new Random();
         }
         public abstract void Update(GameTime gameTime);
 
