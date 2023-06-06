@@ -9,24 +9,18 @@ namespace RPG
     {
         protected SpriteAnimation Texture;
         protected Rectangle Position;
-        protected int Id;
-        protected Condition condition;
-        protected enum Condition
-        {
-            Lying, Standing
-        }
 
-        public Object(SpriteAnimation texture, Rectangle position, int id)
+        public Object(SpriteAnimation texture, Rectangle position)
         {
             Texture = texture;
             Position = position;
-            Id = id;
         }
         public abstract void Update(GameTime gameTime);
 
         public void Draw(SpriteBatch _spritebatch)
         {
-
+            Texture.Draw(_spritebatch, null, Position);
         }
+        public abstract bool Use(int damage, Game1.Item items);
     }
 }
