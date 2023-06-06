@@ -24,6 +24,8 @@ namespace RPG
             WaterWand = 512,
         }
 
+        public static bool quit = false;
+
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -45,7 +47,7 @@ namespace RPG
 
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            if ((GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape)) || quit)
                 Exit();
 
 
@@ -59,5 +61,6 @@ namespace RPG
 
             base.Draw(gameTime);
         }
+
     }
 }

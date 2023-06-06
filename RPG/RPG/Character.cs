@@ -25,7 +25,8 @@ namespace RPG
             A = 2,
             S = 4,
             D = 8,
-            Shoot = 16
+            Shoot = 16,
+            Use = 32
         }
 
         public Character(SpriteAnimation texture, Rectangle pos)
@@ -43,6 +44,7 @@ namespace RPG
             if (Activity.HasFlag(Action.S)) Y += 10;
             if (Activity.HasFlag(Action.D)) X += 10;
             if (Activity.HasFlag(Action.Shoot) && Weapon != null) Weapon.Use();
+            if (Activity.HasFlag(Action.Use) && Weapon != null) Weapon.Use();  //use item
 
             Position = new Rectangle(X, Y, Position.Width, Position.Height);
         }

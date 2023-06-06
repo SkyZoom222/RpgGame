@@ -34,6 +34,7 @@ namespace RPG
             if (keyState.IsKeyDown(Keys.W)) Activity |= Action.W;
             if (keyState.IsKeyDown(Keys.S)) Activity |= Action.S;
             if (mState.LeftButton == ButtonState.Pressed) Activity |= Action.Shoot;
+            if (mState.RightButton == ButtonState.Pressed) Activity |= Action.Use;
         }
     }   
 }
