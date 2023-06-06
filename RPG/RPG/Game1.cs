@@ -9,6 +9,8 @@ namespace RPG
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
+        public static bool quit = false;
+
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -18,7 +20,6 @@ namespace RPG
 
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
 
             base.Initialize();
         }
@@ -27,15 +28,13 @@ namespace RPG
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
         }
 
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            if ((GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape)) || quit)
                 Exit();
 
-            // TODO: Add your update logic here
 
             base.Update(gameTime);
         }
@@ -44,9 +43,9 @@ namespace RPG
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
 
             base.Draw(gameTime);
         }
+
     }
 }
