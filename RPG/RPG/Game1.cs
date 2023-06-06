@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Collections.Generic;
 
 namespace RPG
 {
@@ -8,6 +9,20 @@ namespace RPG
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
+        public enum Item
+        {
+            Bedrock = 0,
+            Arm = 1,
+            Key = 2,
+            Pickaxe = 4,
+            Axe = 8,
+            Sword = 16,
+            RainbowWand = 32;
+            IceWand = 64,
+            FireWand = 128,
+            StoneWand = 256,
+            WaterWand = 512,
+        }
 
         public static bool quit = false;
 
